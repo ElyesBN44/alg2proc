@@ -26,17 +26,30 @@ END
 
 
 ALGORITHM problem2
-PROCEDURE Scalaire(v1,v2)
+PROCEDURE scalaire(v1,v2)
 BEGIN
 ps:=0
-    FOR i FROM 0 TO length(v1) STEP 1  DO:
+while(length(v1)==length(v2))
+    ortho(v1,v2)
+result(ps)
+   
+END
+FUNCTION ortho(v1,v2) : INTEGER
+BEGIN
+     FOR i FROM 0 TO length(v1) STEP 1  DO:
     read(v1)
     read(v2)
-    ps:=v1*v2
-    if ps==0 THEN:
+    ps:=ps+(v1[i]*v2[i])
+    END_FOR
+    RETURN ps ;
+END
+PROCEDURE result(ps)
+BEGIN
+     if ps==0 THEN:
     write("sont orthogonaux")
     ELSE
     write("ne sont pas orthogonaux")
-    END_FOR
+    END_IF
+
 END
     
